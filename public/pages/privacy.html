@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - SyntaxBots</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .legal-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--spacing-3xl) var(--spacing-lg);
+            line-height: 1.7;
+        }
+        
+        .legal-header {
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+            padding-top: 80px;
+        }
+        
+        .legal-title {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            color: var(--text-primary);
+        }
+        
+        .legal-subtitle {
+            color: var(--text-secondary);
+            font-size: var(--font-size-lg);
+        }
+        
+        .legal-section {
+            margin-bottom: var(--spacing-2xl);
+        }
+        
+        .legal-section h2 {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            margin-bottom: var(--spacing-lg);
+            color: var(--primary);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: var(--spacing-sm);
+        }
+        
+        .legal-section h3 {
+            font-size: var(--font-size-lg);
+            font-weight: 500;
+            margin: var(--spacing-lg) 0 var(--spacing-sm) 0;
+            color: var(--text-primary);
+        }
+        
+        .legal-section p {
+            margin-bottom: var(--spacing-md);
+            color: var(--text-secondary);
+        }
+        
+        .legal-section ul, .legal-section ol {
+            margin-bottom: var(--spacing-md);
+            padding-left: var(--spacing-xl);
+        }
+        
+        .legal-section li {
+            margin-bottom: var(--spacing-xs);
+            color: var(--text-secondary);
+        }
+        
+        .highlight {
+            background: var(--bg-secondary);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--primary);
+            margin: var(--spacing-lg) 0;
+        }
+        
+        .privacy-rights {
+            background: var(--bg-tertiary);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            margin: var(--spacing-lg) 0;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--spacing-lg) 0;
+            background: var(--bg-primary);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .data-table th,
+        .data-table td {
+            padding: var(--spacing-md);
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .data-table th {
+            background: var(--bg-secondary);
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .data-table td {
+            color: var(--text-secondary);
+        }
+        
+        .contact-info {
+            background: var(--bg-tertiary);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            margin-top: var(--spacing-2xl);
+        }
+        
+        .last-updated {
+            font-style: italic;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: var(--spacing-xl);
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            color: var(--primary);
+            text-decoration: none;
+            margin-bottom: var(--spacing-xl);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            transform: translateX(-4px);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <i class="fas fa-robot"></i>
+                <span>SyntaxBots</span>
+            </div>
+            <div class="nav-actions">
+                <a href="../index.html" class="admin-link">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <button id="themeToggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="legal-container">
+        <a href="../index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            Back to Home
+        </a>
+
+        <div class="legal-header">
+            <h1 class="legal-title">Privacy Policy</h1>
+            <p class="legal-subtitle">Your privacy is important to us. Learn how we collect, use, and protect your data.</p>
+        </div>
+
+        <div class="highlight">
+            <p><strong>Quick Summary:</strong> We collect minimal data necessary to provide our services. Most users browse our site without creating accounts. We only collect Discord OAuth data for our administrative functions, and we never sell your data.</p>
+        </div>
+
+        <section class="legal-section">
+            <h2>1. Introduction</h2>
+            <p>SyntaxBots ("we", "our", or "us") operates the SyntaxBots website and related services (the "Service"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.</p>
+            <p>This Privacy Policy applies to all users of our Service and should be read in conjunction with our Terms of Service.</p>
+        </section>
+
+        <section class="legal-section">
+            <h2>2. Information We Collect</h2>
+            
+            <h3>2.1 General Website Usage (No Account Required)</h3>
+            <p>Most of our Service is accessible without creating an account. For general browsing, we automatically collect:</p>
+            <ul>
+                <li>Usage data (pages visited, time spent on site)</li>
+                <li>Device information (browser type, operating system, IP address)</li>
+                <li>Log data (access times, errors, performance metrics)</li>
+                <li>Cookies for essential website functionality and preferences</li>
+            </ul>
+
+            <h3>2.2 Administrative Access Only</h3>
+            <p>Discord OAuth authentication is only used for administrative purposes by SyntaxBots staff. When administrative authentication occurs, we collect:</p>
+            <ul>
+                <li>Discord user ID</li>
+                <li>Discord username and discriminator</li>
+                <li>Discord avatar</li>
+                <li>Discord email address (if permission is granted)</li>
+            </ul>
+
+            <h3>2.3 Contact and Support</h3>
+            <p>When you contact us through our support channels, we may collect:</p>
+            <ul>
+                <li>Contact information you provide (email, Discord username)</li>
+                <li>Communications content (support messages, feedback)</li>
+                <li>Information necessary to respond to your inquiry</li>
+            </ul>
+        </section>
+
+        <section class="legal-section">
+            <h2>3. How We Use Your Information</h2>
+            <p>We use the information we collect for the following purposes:</p>
+            
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Purpose</th>
+                        <th>Data Used</th>
+                        <th>Legal Basis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Website functionality and user experience</td>
+                        <td>Usage data, cookies, device information</td>
+                        <td>Legitimate interest</td>
+                    </tr>
+                    <tr>
+                        <td>Administrative authentication (staff only)</td>
+                        <td>Discord OAuth data</td>
+                        <td>Legitimate interest</td>
+                    </tr>
+                    <tr>
+                        <td>Content management and curation</td>
+                        <td>Bot information, usage analytics</td>
+                        <td>Legitimate interest</td>
+                    </tr>
+                    <tr>
+                        <td>Security and fraud prevention</td>
+                        <td>Log data, device information, IP addresses</td>
+                        <td>Legitimate interest</td>
+                    </tr>
+                    <tr>
+                        <td>Communications and support</td>
+                        <td>Contact information, support messages</td>
+                        <td>Consent / Legitimate interest</td>
+                    </tr>
+                    <tr>
+                        <td>Legal compliance</td>
+                        <td>Any data as required</td>
+                        <td>Legal obligation</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="legal-section">
+            <h2>4. Information Sharing and Disclosure</h2>
+            
+            <h3>4.1 We Do Not Sell Your Data</h3>
+            <p>We do not sell, trade, or rent your personal information to third parties for commercial purposes.</p>
+            
+            <h3>4.2 When We May Share Information</h3>
+            <p>We may share your information in the following limited circumstances:</p>
+            <ul>
+                <li><strong>Service Providers:</strong> With trusted third-party service providers who assist in operating our Service</li>
+                <li><strong>Legal Requirements:</strong> When required by law, court order, or government request</li>
+                <li><strong>Safety and Security:</strong> To protect the rights, property, or safety of SyntaxBots, our users, or others</li>
+                <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of business assets</li>
+                <li><strong>Consent:</strong> With your explicit consent for specific purposes</li>
+            </ul>
+
+            <h3>4.3 Public Information</h3>
+            <p>Information you choose to make public (such as bot listings) may be visible to other users and search engines.</p>
+        </section>
+
+        <section class="legal-section">
+            <h2>5. Data Security</h2>
+            <p>We implement appropriate technical and organizational security measures to protect your personal information, including:</p>
+            <ul>
+                <li>Encryption of data in transit and at rest</li>
+                <li>Regular security assessments and updates</li>
+                <li>Access controls and authentication mechanisms</li>
+                <li>Secure hosting infrastructure</li>
+                <li>Employee training on data protection</li>
+            </ul>
+            <p>However, no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+        </section>
+
+        <section class="legal-section">
+            <h2>6. Data Retention</h2>
+            <p>We retain your personal information for as long as necessary to:</p>
+            <ul>
+                <li>Provide you with our services</li>
+                <li>Comply with legal obligations</li>
+                <li>Resolve disputes and enforce agreements</li>
+                <li>Improve our services</li>
+            </ul>
+            <p>When we no longer need your personal information, we will securely delete or anonymize it.</p>
+        </section>
+
+        <section class="legal-section">
+            <h2>7. Your Privacy Rights</h2>
+            
+            <div class="privacy-rights">
+                <h3>Under GDPR (EU Residents)</h3>
+                <p>If you are a resident of the European Union, you have the following rights:</p>
+                <ul>
+                    <li><strong>Access:</strong> Request a copy of your personal data</li>
+                    <li><strong>Rectification:</strong> Correct inaccurate or incomplete data</li>
+                    <li><strong>Erasure:</strong> Request deletion of your personal data</li>
+                    <li><strong>Portability:</strong> Receive your data in a portable format</li>
+                    <li><strong>Restriction:</strong> Limit how we process your data</li>
+                    <li><strong>Objection:</strong> Object to processing based on legitimate interests</li>
+                    <li><strong>Withdraw Consent:</strong> Withdraw consent where processing is based on consent</li>
+                </ul>
+            </div>
+
+            <div class="privacy-rights">
+                <h3>Under CCPA (California Residents)</h3>
+                <p>If you are a California resident, you have the following rights:</p>
+                <ul>
+                    <li><strong>Know:</strong> Right to know what personal information is collected and how it's used</li>
+                    <li><strong>Delete:</strong> Right to delete personal information</li>
+                    <li><strong>Opt-out:</strong> Right to opt-out of the sale of personal information</li>
+                    <li><strong>Non-discrimination:</strong> Right not to be discriminated against for exercising these rights</li>
+                </ul>
+            </div>
+
+            <h3>Exercising Your Rights</h3>
+            <p>To exercise any of these rights, please contact us using the information provided in the "Contact Us" section below. We will respond to your request within the timeframe required by applicable law.</p>
+        </section>
+
+        <section class="legal-section">
+            <h2>8. Cookies and Tracking Technologies</h2>
+            
+            <h3>8.1 Types of Cookies We Use</h3>
+            <ul>
+                <li><strong>Essential Cookies:</strong> Necessary for the website to function properly</li>
+                <li><strong>Functional Cookies:</strong> Remember your preferences and settings</li>
+                <li><strong>Analytics Cookies:</strong> Help us understand how you use our website</li>
+                <li><strong>Authentication Tokens:</strong> Keep you logged in securely</li>
+            </ul>
+
+            <h3>8.2 Managing Cookies</h3>
+            <p>You can control cookies through your browser settings. However, disabling certain cookies may affect the functionality of our Service.</p>
+        </section>
+
+        <section class="legal-section">
+            <h2>9. Third-Party Services</h2>
+            <p>Our Service may contain links to third-party websites or integrate with third-party services, including:</p>
+            <ul>
+                <li><strong>Discord:</strong> For authentication and bot information</li>
+                <li><strong>Font Awesome:</strong> For icons and styling</li>
+                <li><strong>Google Fonts:</strong> For web fonts</li>
+            </ul>
+            <p>These third parties have their own privacy policies, and we are not responsible for their practices.</p>
+        </section>
+
+        <section class="legal-section">
+            <h2>10. Children's Privacy</h2>
+            <p>Our Service is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If we discover that a child under 13 has provided us with personal information, we will delete it immediately.</p>
+            <p>If you are a parent or guardian and believe your child has provided us with personal information, please contact us.</p>
+        </section>
+
+        <section class="legal-section">
+            <h2>11. International Data Transfers</h2>
+            <p>Your information may be transferred to and processed in countries other than your own. We ensure that such transfers comply with applicable data protection laws and implement appropriate safeguards.</p>
+        </section>
+
+        <section class="legal-section">
+            <h2>12. Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time. We will notify you of any material changes by:</p>
+            <ul>
+                <li>Posting the updated policy on our website</li>
+                <li>Sending an email notification (if you have provided your email)</li>
+                <li>Displaying a notice on our website</li>
+            </ul>
+            <p>Your continued use of the Service after any changes indicates your acceptance of the updated Privacy Policy.</p>
+        </section>
+
+        <section class="legal-section">
+            <h2>13. Data Protection Officer</h2>
+            <p>If you have questions about data protection or wish to exercise your privacy rights, you can contact our Data Protection Officer at:</p>
+            <p><strong>Email:</strong> dpo@syntaxbots.com</p>
+        </section>
+
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
+            <ul>
+                <li><strong>Email:</strong> privacy@syntaxbots.com</li>
+                <li><strong>General Contact:</strong> support@syntaxbots.com</li>
+                <li><strong>Website:</strong> https://syntaxbots.live</li>
+                <li><strong>Discord:</strong> https://discord.gg/WasHteZPRP</li>
+                <li><strong>Address:</strong>Newcastle upon Tyne NE1 7RU</li>
+            </ul>
+        </div>
+
+        <p class="last-updated"><strong>Last updated:</strong> July 23, 2025</p>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-robot"></i>
+                    <span>SyntaxBots</span>
+                </div>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="../index.html">Home</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="icon.js"></script>
+    <script>
+        // Theme Management
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        body.setAttribute('data-theme', currentTheme);
+
+        // Update theme toggle icon using Icon class
+        function updateThemeIcon() {
+            const isDark = body.getAttribute('data-theme') === 'dark';
+            const iconName = isDark ? 'sun' : 'moon';
+            
+            themeToggle.innerHTML = '';
+            const themeIcon = new Icon(iconName, {
+                size: 'lg',
+                title: `Switch to ${isDark ? 'light' : 'dark'} theme`
+            });
+            
+            themeToggle.appendChild(themeIcon.createElement());
+        }
+
+        updateThemeIcon();
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SyntaxBots - Discord Bot Collection</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <i class="fas fa-robot"></i>
+                <span>SyntaxBots</span>
+            </div>
+            <div class="nav-actions">
+                <a href="admin.html" class="admin-link">
+                    <i class="fas fa-cog"></i>
+                    Admin
+                </a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Landing Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Powerful Discord Bots
+                    <span class="gradient-text">for Your Server</span>
+                </h1>
+                <p class="hero-description">
+                    Discover our collection of feature-rich Discord bots designed to enhance your server experience.
+                    From moderation to entertainment, we've got you covered.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="scrollToBots()">
+                        <i class="fas fa-rocket"></i>
+                        Explore Bots
+                    </button>
+                    <a href="#" class="btn btn-secondary">
+                        <i class="fab fa-discord"></i>
+                        Join Discord
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card">
+                    <i class="fas fa-robot"></i>
+                    <div class="pulse"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bots Section -->
+        <section class="bots-section" id="bots">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Discord Bots</h2>
+                    <p>Choose from our collection of carefully crafted bots</p>
+                </div>
+                
+                <div class="bots-grid" id="botsGrid">
+                    <!-- Bot cards will be dynamically generated -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bot Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modalTitle"></h3>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-bot-info">
+                    <div class="modal-bot-icon">
+                        <i id="modalIcon"></i>
+                    </div>
+                    <div class="modal-bot-details">
+                        <p id="modalDescription"></p>
+                        <div class="modal-features">
+                            <h4>Features:</h4>
+                            <ul id="modalFeatures"></ul>
+                        </div>
+                        <div class="modal-stats">
+                            <div class="stat">
+                                <span class="stat-label">Servers:</span>
+                                <span class="stat-value" id="modalServers"></span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Users:</span>
+                                <span class="stat-value" id="modalUsers"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-primary" id="modalInviteBtn">
+                    <i class="fas fa-plus"></i>
+                    Add to Server
+                </a>
+                <a href="#" class="btn btn-secondary" id="modalSupportBtn">
+                    <i class="fas fa-life-ring"></i>
+                    Support
+                </a>
+                <a href="#" class="btn btn-github" id="modalGithubBtn" style="display: none;">
+                    <i class="fab fa-github"></i>
+                    View Source
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-robot"></i>
+                    <span>SyntaxBots</span>
+                </div>
+                <div class="footer-links">
+                    <a href="pages/privacy.html">Privacy Policy</a>
+                    <a href="pages/terms.html">Terms of Service</a>
+                    <a href="mailto:support@syntaxbots.com">Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/icon.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

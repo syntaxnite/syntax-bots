@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SyntaxBots</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--spacing-3xl) var(--spacing-lg);
+        }
+        
+        .contact-header {
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+            padding-top: 80px;
+        }
+        
+        .contact-title {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            color: var(--text-primary);
+        }
+        
+        .contact-subtitle {
+            color: var(--text-secondary);
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-3xl);
+        }
+        
+        .contact-card {
+            background: var(--bg-secondary);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-xl);
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-lg);
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-lg);
+            color: white;
+            font-size: var(--font-size-2xl);
+        }
+        
+        .contact-card h3 {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-primary);
+        }
+        
+        .contact-card p {
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-link:hover {
+            color: var(--primary-dark);
+            transform: translateX(4px);
+        }
+        
+        .contact-form {
+            background: var(--bg-primary);
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: var(--spacing-sm);
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: var(--spacing-md);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: var(--font-size-base);
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .form-actions {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: flex-end;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            color: var(--primary);
+            text-decoration: none;
+            margin-bottom: var(--spacing-xl);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            transform: translateX(-4px);
+        }
+        
+        .faq-section {
+            margin-top: var(--spacing-3xl);
+        }
+        
+        .faq-title {
+            font-size: var(--font-size-2xl);
+            font-weight: 600;
+            margin-bottom: var(--spacing-xl);
+            text-align: center;
+            color: var(--text-primary);
+        }
+        
+        .faq-item {
+            background: var(--bg-secondary);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-md);
+            border: 1px solid var(--border-color);
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-primary);
+        }
+        
+        .faq-answer {
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <i class="fas fa-robot"></i>
+                <span>SyntaxBots</span>
+            </div>
+            <div class="nav-actions">
+                <a href="../index.html" class="admin-link">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <button id="themeToggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="contact-container">
+        <a href="../index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            Back to Home
+        </a>
+
+        <div class="contact-header">
+            <h1 class="contact-title">Contact Us</h1>
+            <p class="contact-subtitle">Have questions, feedback, or need support? We're here to help!</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>General Support</h3>
+                <p>For general questions, technical support, or assistance with using SyntaxBots.</p>
+                <a href="mailto:support@syntaxbots.com" class="contact-link">
+                    <i class="fas fa-external-link-alt"></i>
+                    support@syntaxbots.com
+                </a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Privacy & Legal</h3>
+                <p>For privacy concerns, data protection inquiries, or legal matters.</p>
+                <a href="mailto:privacy@syntaxbots.com" class="contact-link">
+                    <i class="fas fa-external-link-alt"></i>
+                    privacy@syntaxbots.com
+                </a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>Bot Developers</h3>
+                <p>For bot listing requests, developer inquiries, or partnership opportunities.</p>
+                <a href="mailto:developers@syntaxbots.com" class="contact-link">
+                    <i class="fas fa-external-link-alt"></i>
+                    developers@syntaxbots.com
+                </a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fab fa-discord"></i>
+                </div>
+                <h3>Discord Community</h3>
+                <p>Join our Discord server for real-time support and community discussions.</p>
+                <a href="#" class="contact-link">
+                    <i class="fas fa-external-link-alt"></i>
+                    Join Discord Server
+                </a>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h2 style="margin-bottom: var(--spacing-xl); color: var(--text-primary);">Send us a Message</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" name="category" style="width: 100%; padding: var(--spacing-md); border: 1px solid var(--border-color); border-radius: var(--radius-md); background: var(--bg-secondary); color: var(--text-primary); font-family: inherit;">
+                        <option value="general">General Inquiry</option>
+                        <option value="support">Technical Support</option>
+                        <option value="bot-listing">Bot Listing Request</option>
+                        <option value="privacy">Privacy/Legal</option>
+                        <option value="partnership">Partnership</option>
+                        <option value="feedback">Feedback</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" placeholder="Please provide as much detail as possible..." required></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary">
+                        <i class="fas fa-times"></i>
+                        Clear
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="faq-section">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I list my Discord bot on SyntaxBots?</div>
+                <div class="faq-answer">To have your Discord bot featured on SyntaxBots, please contact us through our developer email (developers@syntaxbots.com) with your bot's information. Our team will review your submission and add it to our curated collection if it meets our guidelines.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Do I need to create an account to browse bots?</div>
+                <div class="faq-answer">No! You can browse all bot listings, view detailed information, and access invite links without creating any accounts. SyntaxBots is designed to be publicly accessible for all users.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What information do you collect from visitors?</div>
+                <div class="faq-answer">For regular browsing, we only collect basic usage analytics and essential cookies for website functionality. Discord OAuth is only used for our administrative functions, not for regular users. See our Privacy Policy for complete details.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How do I update or remove my bot listing?</div>
+                <div class="faq-answer">Since bot listings are managed by our team, please contact us at developers@syntaxbots.com if you need to update or remove your bot's information. We'll process your request promptly.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Is SyntaxBots affiliated with Discord?</div>
+                <div class="faq-answer">No, SyntaxBots is an independent platform for showcasing Discord bots. We are not affiliated with, endorsed by, or sponsored by Discord Inc.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How can I report inappropriate content or bots?</div>
+                <div class="faq-answer">If you encounter inappropriate content or bots that violate our guidelines, please contact us immediately at support@syntaxbots.com with details about the issue.</div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-robot"></i>
+                    <span>SyntaxBots</span>
+                </div>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="icon.js"></script>
+    <script>
+        // Theme Management
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        body.setAttribute('data-theme', currentTheme);
+
+        // Update theme toggle icon using Icon class
+        function updateThemeIcon() {
+            const isDark = body.getAttribute('data-theme') === 'dark';
+            const iconName = isDark ? 'sun' : 'moon';
+            
+            themeToggle.innerHTML = '';
+            const themeIcon = new Icon(iconName, {
+                size: 'lg',
+                title: `Switch to ${isDark ? 'light' : 'dark'} theme`
+            });
+            
+            themeToggle.appendChild(themeIcon.createElement());
+        }
+
+        updateThemeIcon();
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon();
+        });
+
+        // Contact Form Handling
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Here you would typically send the data to your backend
+            console.log('Contact form submitted:', data);
+            
+            // For now, just show a success message
+            alert('Thank you for your message! We\'ll get back to you soon.');
+            contactForm.reset();
+        });
+
+        // Clear form button
+        document.querySelector('.btn-secondary').addEventListener('click', () => {
+            if (confirm('Are you sure you want to clear the form?')) {
+                contactForm.reset();
+            }
+        });
+    </script>
+</body>
+</html>

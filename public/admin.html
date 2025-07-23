@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - SyntaxBots</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <i class="fas fa-robot"></i>
+                <span>SyntaxBots Admin</span>
+            </div>
+            <div class="nav-actions">
+                <a href="index.html" class="home-link">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="user-menu" id="userMenu" style="display: none;">
+                    <img src="" alt="User Avatar" class="user-avatar" id="userAvatar">
+                    <span class="user-name" id="userName"></span>
+                    <button class="logout-btn" id="logoutBtn">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="admin-main">
+        <!-- Login Section -->
+        <section class="login-section" id="loginSection">
+            <div class="login-container">
+                <div class="login-card">
+                    <div class="login-header">
+                        <i class="fab fa-discord"></i>
+                        <h1>Admin Login</h1>
+                        <p>Sign in with Discord to manage your bots</p>
+                    </div>
+                    <button class="discord-login-btn" id="discordLoginBtn">
+                        <i class="fab fa-discord"></i>
+                        Login with Discord
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Dashboard -->
+        <section class="dashboard" id="dashboard" style="display: none;">
+            <div class="container">
+                <div class="dashboard-header">
+                    <div class="dashboard-welcome">
+                        <h1>Bot Management Dashboard</h1>
+                        <p class="welcome-message">Welcome back, <span id="welcomeUserName"></span>! 🎉</p>
+                    </div>
+                    <button class="btn btn-primary" id="addBotBtn">
+                        <i class="fas fa-plus"></i>
+                        Add New Bot
+                    </button>
+                </div>
+
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="totalBots">0</span>
+                            <span class="stat-label">Total Bots</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="totalServers">0</span>
+                            <span class="stat-label">Total Servers</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="totalUsers">0</span>
+                            <span class="stat-label">Total Users</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bots-management">
+                    <div class="section-header">
+                        <h2>Your Bots</h2>
+                        <div class="search-bar">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search bots..." id="searchBots">
+                        </div>
+                    </div>
+                    
+                    <div class="bots-table-container">
+                        <table class="bots-table" id="botsTable">
+                            <thead>
+                                <tr>
+                                    <th>Bot</th>
+                                    <th>Status</th>
+                                    <th>Servers</th>
+                                    <th>Users</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="botsTableBody">
+                                <!-- Bot rows will be dynamically generated -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Add/Edit Bot Modal -->
+    <div class="modal-overlay" id="botModalOverlay">
+        <div class="modal bot-modal">
+            <div class="modal-header">
+                <h3 id="botModalTitle">Add New Bot</h3>
+                <button class="modal-close" id="botModalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="botForm" class="bot-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="botName">Bot Name *</label>
+                            <input type="text" id="botName" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="botId">Bot ID *</label>
+                            <input type="text" id="botId" name="id" required>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="botDescription">Description *</label>
+                            <textarea id="botDescription" name="description" rows="3" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="botIcon">Icon Class</label>
+                            <input type="text" id="botIcon" name="icon" placeholder="fas fa-robot">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="botStatus">Status</label>
+                            <select id="botStatus" name="status">
+                                <option value="Online">Online</option>
+                                <option value="Offline">Offline</option>
+                                <option value="Maintenance">Maintenance</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="botServers">Server Count</label>
+                            <input type="text" id="botServers" name="servers" placeholder="1,234">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="botUsers">User Count</label>
+                            <input type="text" id="botUsers" name="users" placeholder="56,789">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="botTags">Tags (comma separated)</label>
+                            <input type="text" id="botTags" name="tags" placeholder="Moderation, Utility">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="botInviteUrl">Invite URL</label>
+                            <input type="url" id="botInviteUrl" name="inviteUrl">
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="botFeatures">Features (one per line)</label>
+                            <textarea id="botFeatures" name="features" rows="5" placeholder="Feature 1&#10;Feature 2&#10;Feature 3"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="botSupportUrl">Support Server URL</label>
+                            <input type="url" id="botSupportUrl" name="supportUrl">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="botGithubUrl">GitHub Repository URL <span class="optional">(optional)</span></label>
+                            <input type="url" id="botGithubUrl" name="githubUrl" placeholder="https://github.com/username/repository">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancelBotBtn">Cancel</button>
+                <button type="submit" form="botForm" class="btn btn-primary" id="saveBotBtn">
+                    <i class="fas fa-save"></i>
+                    Save Bot
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal-overlay" id="deleteModalOverlay">
+        <div class="modal delete-modal">
+            <div class="modal-header">
+                <h3>Delete Bot</h3>
+                <button class="modal-close" id="deleteModalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="delete-warning">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p>Are you sure you want to delete "<span id="deleteBotName"></span>"?</p>
+                    <p class="warning-text">This action cannot be undone.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancelDeleteBtn">Cancel</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteBtn">
+                    <i class="fas fa-trash"></i>
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/icon.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
